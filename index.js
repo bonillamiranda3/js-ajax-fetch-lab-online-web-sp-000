@@ -31,6 +31,8 @@ function createIssue() {
   };
 
   fetch(`https://api.github.com/repos/${repo}/issues`, {
+    method:'POST',
+    body: JSON.stringify(postData),
     headers: {
       Authorization: `token ${getToken()}`
     }
